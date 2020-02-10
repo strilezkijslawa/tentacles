@@ -3,7 +3,7 @@
 
 Composer
 ```
-"greabock/tentacles": "dev-master"
+"p-andrey/tentacles": "dev-master"
 ```
 
 user-model...    
