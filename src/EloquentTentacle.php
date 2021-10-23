@@ -59,9 +59,18 @@ trait EloquentTentacle
             return $this->getRelationshipFromMethod($key);
         }
 
-        if (method_exists($this, $key)) {
-            return $this->getRelationshipFromMethod($key);
+        if (! $this->isRelation($key)) {
+            return;
         }
+
+        if ($this->preventsLazyLoading) {
+            $this->handleLazyLoadingViolation($key);
+        }
+
+        // If the "attribute" exists as a method on the model, we will just assume
+        // it is a relationship and will load and return results from the query
+        // and hydrate the relationship's value on the "relationships" array.
+        return $this->getRelationshipFromMethod($key);
     }
 }
 
