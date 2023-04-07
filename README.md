@@ -3,7 +3,7 @@
 
 Composer
 ```
-"p-andrey/tentacles": "^1.2"
+"p-andrey/tentacles": "^3.0"
 ```
 
 user-model...    
